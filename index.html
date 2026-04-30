@@ -199,7 +199,12 @@
       flex-shrink: 0;
     }
     .nav-logo svg { height: 62px; width: auto; }
-    @media (max-width: 480px) { .nav-logo svg { height: 48px; } }
+    .logo-mobile { display: none; }
+    @media (max-width: 700px) {
+      .logo-desktop { display: none; }
+      .logo-mobile  { display: flex; align-items: center; }
+      .logo-mobile svg { height: 52px; width: auto; }
+    }
 
     .nav-links {
       display: flex;
@@ -763,17 +768,15 @@
      NAVIGATION
 ════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo" aria-label="J&G Landscaping and Tree Trimming - Home">
+  <!-- Desktop logo: full palm trees on both sides -->
+  <a href="#hero" class="nav-logo logo-desktop" aria-label="J&G Landscaping and Tree Trimming - Home">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 68" aria-hidden="true">
       <defs>
         <filter id="ts" x="-10%" y="-10%" width="120%" height="120%">
           <feDropShadow dx="1.5" dy="1.5" stdDeviation="1" flood-color="rgba(0,0,0,0.55)"/>
         </filter>
       </defs>
-
-      <!-- ── LEFT PALM ── -->
       <path d="M22 66 C21 54 19 42 22 25" stroke="#8B5E2A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-      <!-- fronds -->
       <path d="M22,25 Q9,26 2,30  Q12,23 22,25" fill="#52b788"/>
       <path d="M22,25 Q10,16 3,12  Q13,19 22,25" fill="#3a9a6e"/>
       <path d="M22,25 Q16,9  13,4  Q19,14 22,25" fill="#52b788"/>
@@ -781,27 +784,20 @@
       <path d="M22,25 Q28,9  31,4  Q25,15 22,25" fill="#52b788"/>
       <path d="M22,25 Q34,16 40,12 Q29,19 22,25" fill="#3a9a6e"/>
       <path d="M22,25 Q36,26 42,30 Q32,23 22,25" fill="#52b788"/>
-      <!-- coconuts -->
       <circle cx="21" cy="26" r="3.8" fill="#d4a030"/>
       <circle cx="24" cy="28" r="3.2" fill="#b88020"/>
-
-      <!-- ── TEXT (centred at x=132) ── -->
       <text x="132" y="31" text-anchor="middle"
         font-family="Montserrat,'Arial Black',sans-serif"
         font-weight="900" font-size="28" letter-spacing="2"
         fill="#ffffff" filter="url(#ts)">J&amp;G</text>
-
       <text x="132" y="48" text-anchor="middle"
         font-family="Montserrat,'Arial Black',sans-serif"
         font-weight="800" font-size="12.5" letter-spacing="3"
         fill="rgba(255,255,255,0.92)">LANDSCAPING</text>
-
       <text x="132" y="63" text-anchor="middle"
         font-family="Inter,Arial,sans-serif"
         font-weight="700" font-size="10.5" letter-spacing="2"
         fill="#f4a261">&amp; TREE TRIMMING</text>
-
-      <!-- ── RIGHT PALM (mirrored) ── -->
       <g transform="translate(264,0) scale(-1,1)">
         <path d="M22 66 C21 54 19 42 22 25" stroke="#8B5E2A" stroke-width="4.5" fill="none" stroke-linecap="round"/>
         <path d="M22,25 Q9,26 2,30  Q12,23 22,25" fill="#52b788"/>
@@ -814,6 +810,35 @@
         <circle cx="21" cy="26" r="3.8" fill="#d4a030"/>
         <circle cx="24" cy="28" r="3.2" fill="#b88020"/>
       </g>
+    </svg>
+  </a>
+
+  <!-- Mobile logo: single palm + stacked text, compact -->
+  <a href="#hero" class="nav-logo logo-mobile" aria-label="J&G Landscaping and Tree Trimming - Home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 52" aria-hidden="true">
+      <!-- Palm trunk -->
+      <path d="M17 50 C16 40 14 30 17 17" stroke="#8B5E2A" stroke-width="3.8" fill="none" stroke-linecap="round"/>
+      <!-- Fronds -->
+      <path d="M17,17 Q6,18 1,21  Q9,15 17,17" fill="#52b788"/>
+      <path d="M17,17 Q7,10 2,7   Q10,13 17,17" fill="#3a9a6e"/>
+      <path d="M17,17 Q12,5  9,1  Q14,9  17,17" fill="#52b788"/>
+      <path d="M17,17 Q17,4  16,0 Q19,8  17,17" fill="#3a9a6e"/>
+      <path d="M17,17 Q22,5  25,1 Q20,9  17,17" fill="#52b788"/>
+      <path d="M17,17 Q27,10 32,7 Q23,13 17,17" fill="#3a9a6e"/>
+      <path d="M17,17 Q29,18 34,21 Q26,15 17,17" fill="#52b788"/>
+      <!-- Coconuts -->
+      <circle cx="16" cy="18" r="3.2" fill="#d4a030"/>
+      <circle cx="19" cy="20" r="2.8" fill="#b88020"/>
+      <!-- J&G -->
+      <text x="41" y="28"
+        font-family="Montserrat,'Arial Black',sans-serif"
+        font-weight="900" font-size="26" letter-spacing="1"
+        fill="#ffffff">J&amp;G</text>
+      <!-- LANDSCAPING -->
+      <text x="41" y="44"
+        font-family="Montserrat,'Arial Black',sans-serif"
+        font-weight="800" font-size="11" letter-spacing="2.5"
+        fill="rgba(255,255,255,0.88)">LANDSCAPING</text>
     </svg>
   </a>
 
