@@ -202,8 +202,10 @@
     .logo-mobile { display: none; }
     @media (max-width: 700px) {
       .logo-desktop { display: none; }
-      .logo-mobile  { display: flex; align-items: center; }
-      .logo-mobile svg { height: 52px; width: auto; }
+      .logo-mobile  { display: flex; align-items: center; gap: 8px; }
+      .mobile-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+      .mobile-logo-jg  { font-family: var(--font-h); font-size: 1.55rem; font-weight: 900; color: #fff; letter-spacing: 1px; }
+      .mobile-logo-sub { font-family: var(--font-h); font-size: .6rem; font-weight: 800; color: rgba(255,255,255,.85); letter-spacing: 3px; }
     }
 
     .nav-links {
@@ -813,33 +815,24 @@
     </svg>
   </a>
 
-  <!-- Mobile logo: single palm + stacked text, compact -->
+  <!-- Mobile logo: SVG palm icon + HTML text (web font renders reliably) -->
   <a href="#hero" class="nav-logo logo-mobile" aria-label="J&G Landscaping and Tree Trimming - Home">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 52" aria-hidden="true">
-      <!-- Palm trunk -->
-      <path d="M17 50 C16 40 14 30 17 17" stroke="#8B5E2A" stroke-width="3.8" fill="none" stroke-linecap="round"/>
-      <!-- Fronds -->
-      <path d="M17,17 Q6,18 1,21  Q9,15 17,17" fill="#52b788"/>
-      <path d="M17,17 Q7,10 2,7   Q10,13 17,17" fill="#3a9a6e"/>
-      <path d="M17,17 Q12,5  9,1  Q14,9  17,17" fill="#52b788"/>
-      <path d="M17,17 Q17,4  16,0 Q19,8  17,17" fill="#3a9a6e"/>
-      <path d="M17,17 Q22,5  25,1 Q20,9  17,17" fill="#52b788"/>
-      <path d="M17,17 Q27,10 32,7 Q23,13 17,17" fill="#3a9a6e"/>
-      <path d="M17,17 Q29,18 34,21 Q26,15 17,17" fill="#52b788"/>
-      <!-- Coconuts -->
-      <circle cx="16" cy="18" r="3.2" fill="#d4a030"/>
-      <circle cx="19" cy="20" r="2.8" fill="#b88020"/>
-      <!-- J&G -->
-      <text x="41" y="28"
-        font-family="Montserrat,'Arial Black',sans-serif"
-        font-weight="900" font-size="26" letter-spacing="1"
-        fill="#ffffff">J&amp;G</text>
-      <!-- LANDSCAPING -->
-      <text x="41" y="44"
-        font-family="Montserrat,'Arial Black',sans-serif"
-        font-weight="800" font-size="11" letter-spacing="2.5"
-        fill="rgba(255,255,255,0.88)">LANDSCAPING</text>
+    <svg width="26" height="42" viewBox="0 0 26 42" aria-hidden="true" style="flex-shrink:0">
+      <path d="M12 41 C11 33 10 24 12 14" stroke="#8B5E2A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+      <path d="M12,14 Q4,15 0,17  Q7,11 12,14" fill="#52b788"/>
+      <path d="M12,14 Q4,8  1,5   Q7,11 12,14" fill="#3a9a6e"/>
+      <path d="M12,14 Q8,3  6,0   Q10,7 12,14" fill="#52b788"/>
+      <path d="M12,14 Q12,2 11,0  Q14,6 12,14" fill="#3a9a6e"/>
+      <path d="M12,14 Q16,3 18,0  Q14,7 12,14" fill="#52b788"/>
+      <path d="M12,14 Q20,8 23,5  Q17,11 12,14" fill="#3a9a6e"/>
+      <path d="M12,14 Q22,15 26,17 Q19,11 12,14" fill="#52b788"/>
+      <circle cx="11" cy="15" r="2.6" fill="#d4a030"/>
+      <circle cx="14" cy="17" r="2.2" fill="#b88020"/>
     </svg>
+    <span class="mobile-logo-text">
+      <span class="mobile-logo-jg">J&amp;G</span>
+      <span class="mobile-logo-sub">LANDSCAPING</span>
+    </span>
   </a>
 
   <ul class="nav-links" id="navLinks">
